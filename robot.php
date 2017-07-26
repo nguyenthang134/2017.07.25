@@ -30,6 +30,9 @@ class NormalBehaviour implements IBehaviour{
     }
 }
 
+
+
+
 class Robot{
     private $strategy = NULL;
     public $name;
@@ -55,12 +58,20 @@ class Robot{
     }
 }
 
-$angryRobot = new Robot("Angry", "agressive");
+class AngryRobot extends Robot{
+
+}
+
+class ShyRobot extends Robot{
+
+}
+
+$angryRobot = new AngryRobot("Angry", "agressive");
 echo "<br/>Robot " .$angryRobot -> name . ": ";
 echo $angryRobot -> showRobotBehaviour();
 
 
 
-$defensiveRobot = new Robot("Shy", "defend");
+$defensiveRobot = new ShyRobot("Shy", "defend");
 echo "<br/>Robot " .$defensiveRobot -> name . ": ";
 echo $defensiveRobot -> showRobotBehaviour();
